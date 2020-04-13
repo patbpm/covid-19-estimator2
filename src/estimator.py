@@ -5,6 +5,8 @@ def estimator(data):
   severeImpact = {}
   reportedCases = data['reportedCases']
   periodType = data['periodType']
+  timeToElapse = data['timeToElapse']
+  totalHospitalBeds = data['totalHospitalBeds']
 
 
 
@@ -17,11 +19,20 @@ def estimator(data):
   impact['currentlyInfected'] = reportedCases * 10
   impact['infectionsByRequestedTime'] = impact['currentlyInfected'] * (2**factor)
 
+  #CHALLENGE 2
+  impact['severeCasesByRequestedTime'] = int(impact['infectionsByRequestedTime'] * 0.15) 
+  impact['hospitalBedsByRequestedTime'] = number_beds_avail(totalHospitalBeds, impact['severeCasesByRequestedTime'])
 
+
+  #--------------------------------------------------------------------------------------------------
   #Result for Severe Impact
   #CHALLENGE 1
   severeImpact['currentlyInfected'] = reportedCases * 50
   severeImpact['infectionsByRequestedTime'] = severeImpact['currentlyInfected']*(2**factor)
+
+  #CHALLENGE 2
+  severeImpact['severeCasesByRequestedTime'] = int(severeImpact['infectionsByRequestedTime'] * 0.15)
+  severeImpact['hospitalBedsByRequestedTime'] = number_beds_avail(totalHospitalBeds, severeImpact['severeCasesByRequestedTime'])
 
 
   result = {'data':data, 'impact':impact, 'severeImpact': severeImpact}
@@ -40,5 +51,11 @@ def get_duration_in_day(periodType, timeToElapse):
     else:
         return 0
 
+
+def number_beds_avail(totalHospitalBeds, severeImpactCases):
+    """ calculating the number of beds available as integers and not floats"""
+    avail_beds = int((0.35 * totalHospitalBeds) - severeImpactCases)
+    
+    return avail_beds
 
 
