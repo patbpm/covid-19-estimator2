@@ -15,7 +15,7 @@ def estimator(data):
   # Conversion of the duration of the time elapse in day
   duration = get_duration_in_day(periodType, timeToElapse)
   factor = duration//3
-
+  #-----
   #Result for Impact
   #CHALLENGE 1
   impact['currentlyInfected'] = reportedCases * 10
@@ -52,7 +52,7 @@ def estimator(data):
   return result
 
 def get_duration_in_day(periodType, timeToElapse):
-    """ Calculates the number of days in that period types received from the data input """
+    """ Calculates the number of days in that period types received from the data input from the server """
 
     if periodType == "days":
         return timeToElapse
