@@ -7,6 +7,8 @@ def estimator(data):
   periodType = data['periodType']
   timeToElapse = data['timeToElapse']
   totalHospitalBeds = data['totalHospitalBeds']
+  avgDailyIncomeInUSD = data['region']['avgDailyIncomeInUSD']
+  avgDailyIncomePopulation = data['region']['avgDailyIncomePopulation']
 
 
 
@@ -23,6 +25,11 @@ def estimator(data):
   impact['severeCasesByRequestedTime'] = int(impact['infectionsByRequestedTime'] * 0.15) 
   impact['hospitalBedsByRequestedTime'] = number_beds_avail(totalHospitalBeds, impact['severeCasesByRequestedTime'])
 
+  #CHALLENGE 3
+  impact['casesForICUByRequestedTime'] = int(impact['infectionsByRequestedTime'] * 0.05)
+  impact['casesForVentilatorsByRequestedTime'] = int(impact['infectionsByRequestedTime'] * 0.02)
+  impact['dollarsInFlight'] =int((impact['infectionsByRequestedTime'] * avgDailyIncomePopulation * avgDailyIncomeInUSD)/ duration)
+
 
   #--------------------------------------------------------------------------------------------------
   #Result for Severe Impact
@@ -33,6 +40,11 @@ def estimator(data):
   #CHALLENGE 2
   severeImpact['severeCasesByRequestedTime'] = int(severeImpact['infectionsByRequestedTime'] * 0.15)
   severeImpact['hospitalBedsByRequestedTime'] = number_beds_avail(totalHospitalBeds, severeImpact['severeCasesByRequestedTime'])
+
+  #CHALLENGE 3
+  severeImpact['casesForICUByRequestedTime'] =  int(severeImpact['infectionsByRequestedTime'] * 0.05)
+  severeImpact['casesForVentilatorsByRequestedTime'] = int(severeImpact['infectionsByRequestedTime'] * 0.02)
+  severeImpact['dollarsInFlight'] = int((severeImpact['infectionsByRequestedTime'] * avgDailyIncomePopulation * avgDailyIncomeInUSD) /duration)
 
 
   result = {'data':data, 'impact':impact, 'severeImpact': severeImpact}
