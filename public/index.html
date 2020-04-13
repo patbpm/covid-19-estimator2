@@ -1,0 +1,107 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HOME | Welcome </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body class="bg-light container">
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+                <a class="navbar-brand" href="/">Convid-19-Estimator</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContentLG" aria-controls="navbarSupportedContentLG" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            
+                <div class="collapse navbar-collapse" id="navbarSupportedContentLG">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/">Result <span class="sr-only">(current)</span></a>
+                        </li>
+                    
+                </div>
+            </nav>
+        </div>
+        
+       
+    </header>
+    <div class="col-md-8 offset-md-2">
+        <span class="anchor" id="formUserEdit"></span>
+          <!-- form user info -->
+        <div class="card card-outline-secondary">
+            <div class="card-header">
+                <h3 class="mb-0">COVID 2019 ESTIMATOR</h3>
+            </div>
+            <div class="card-body">
+                <form class="form" role="form" autocomplete="off">
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label">Period Type</label>
+                        <div class="col-lg-9">
+                            <select id="user_time_zone" class="form-control" size="0" name="data-period-type">
+                                <option value="Days" selected="selected">Days</option>
+                                <option value="Weeks">Weeks</option>
+                                <option value="Weeks">Months</option>
+                                
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label">Time To Elapse</label>
+                        <div class="col-lg-9">
+                            <input class="form-control" type="text" value="Time To Elapse" name="data-time-to-elapse">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label">Reported Cases</label>
+                        <div class="col-lg-9">
+                            <input class="form-control" type="text" value="Reported Cases" name="data-reported-cases">
+                        </div>
+                    </div>
+    
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label">Population</label>
+                        <div class="col-lg-9">
+                            <input class="form-control" type="text" value="Population" name="data-population">
+                        </div>
+                    </div>
+    
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label">Total Hospital Beds</label>
+                        <div class="col-lg-9">
+                            <input class="form-control" type="text" value="Total Hospital Beds" name="data-total-hospital-beds">
+                        </div>
+                    </div>
+                                           
+                    
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label"></label>
+                        <div class="col-lg-9">
+                            <input type="button" class="btn btn-primary" value="Estimate" name="data-go-estimate">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- /form user info -->
+    
+    </div>
+
+    <footer class="text-center text-light">
+        <div class="container ">
+            <section class="bg-dark">
+                <p>Designed by <a href="/">Patrick Bope</a></p>
+                <p>Copyright &copy; 2019 Convid-19-Estimataor.</p>
+                
+               
+            </section>
+        </div>
+        
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
